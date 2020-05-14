@@ -14,5 +14,5 @@ out.center()
 
 js = jarvis.system
 
-js.update.jarvis(js.constants.JRVS_DIR)
-js.update.extensions(js.constants.JRVS_EXTENSIONS_DIR)
+js.Update.jarvis(js.constants.JRVS_DIR)
+js.Update.extensions(js.constants.JRVS_EXTENSIONS_DIR)
