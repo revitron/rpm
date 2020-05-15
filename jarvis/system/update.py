@@ -2,9 +2,14 @@ import subprocess
 import os
 import glob
 from pyrevit import script
+import constants
 
 
 class Update:
+
+    def __init__(self):
+        Update.jarvis(constants.JRVS_DIR)
+        Update.extensions(constants.JRVS_EXTENSIONS_DIR)
 
     @staticmethod
     def jarvis(installDir):
