@@ -5,13 +5,6 @@ from pyrevit import output
 import constants
 
 class UI:
-    
-    @staticmethod 
-    def prepareStartWindow():
-        out = script.get_output()
-        out.set_height(800)
-        out.set_width(1000)
-        #out.center()
         
     @staticmethod 
     def printLogo():
