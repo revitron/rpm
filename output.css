@@ -6,19 +6,19 @@ body {
 	height: 100%;
 	line-height: 20px;
 	margin: 0 0 15px 0;
-	padding: 20px;
-	scrollbar-arrow-color: #444444;
-	scrollbar-base-color: white;
-	scrollbar-face-color: #DDD;
-	scrollbar-highlight-color: white;
-	scrollbar-shadow-color: white;
-	scrollbar-track-color: white;
+	padding: 25px;
+	scrollbar-arrow-color: #617181;
+	scrollbar-base-color: #2c3e50;
+	scrollbar-face-color: #485868;
+	scrollbar-highlight-color: #4a5a69;
+	scrollbar-shadow-color: #2c3e50;
+	scrollbar-track-color: #2c3e50;
 	background-image: url(https://git.herzogdemeuron.com/m.dahmen/jarvis/-/raw/master/svg/jarvis-dark.svg?inline=false);
 	background-repeat: no-repeat;
 	background-size: 120px 80px;
 	background-position: right 0 bottom 15px;
 	background-attachment: fixed;
-
+	border-top: 1px solid #3d5268;
 }
 
 img[src*="jarvis-dark.svg"] {
@@ -68,8 +68,8 @@ tr:nth-child(odd) {
 .entry {
 	margin-bottom: 3px;
 	margin-top: 3px;
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-left: 0;
+	padding-right: 0;
 	word-wrap: break-word;
 }
 
