@@ -11,6 +11,5 @@ class Session:
         out.print_html('<hr>')
         jarvis.system.Update()
         out.print_html('<hr>')
-        out.print_html('<em>Starting session ...</em>')
-        out.print_html('<br>')
+        out.print_html('Starting session ...')
         
