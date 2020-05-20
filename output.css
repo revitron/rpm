@@ -75,7 +75,7 @@ tr:nth-child(odd) {
 	position: relative;
 	background: #bd6049;
 	border-radius: 5px;
-	border: 2px solid ;
+	border: 2px solid;
 	border-top-width: 26px;
 	color: #f7dbd4;
 	margin-top: 10px;
@@ -96,29 +96,31 @@ tr:nth-child(odd) {
 	padding: 6px;
 }
 
-.logsuccess {
-	background: #f7f9f2;
-	color: #618401;
-}
-
-.logerror {
-	background: #f9f2f4;
-	color: #c7254e;
-}
-
-.logwarning {
-	background: #F7F3F2;
-	color: #E17700;
-}
-
+.logsuccess, 
+.logerror,
+.logwarning,
 .logcritical {
-	background: #c7254e;
-	color: white;
+	margin: 10px 0;
+	padding: 6px 9px;
+	border-radius: 3px;
+	border-left: 4px solid;
 }
 
+.logsuccess {
+	color: #088104;
+	background-color: #d1ebc5;
+}
+
+.logerror,
+.logcritical {
+	color: #b9311f;
+	background-color: #f0d3cc;
+}
+
+.logwarning,
 .logdeprecate {
-	background: #ffd900;
-	color: #974901;
+	color: #bd710f;
+	background-color: #f7e0c7;
 }
 
 .coreupdatewarn {
