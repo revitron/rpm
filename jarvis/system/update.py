@@ -10,20 +10,24 @@ class Update:
     def __init__(self):
         Update.jarvis(constants.JRVS_DIR)
         Update.extensions(constants.JRVS_EXTENSIONS_DIR)
-
+        
+    @staticmethod
+    def git(cmd, repo):
+        return subprocess.check_output('git --git-dir={0}\\.git --work-tree={0} {1}'.format(repo, cmd), stderr=subprocess.STDOUT, shell=True)
+        
     @staticmethod
     def jarvis(installDir):
         out = script.get_output()
         out.print_html('<em>Jarvis</em> &mdash; updating ...')
-        print(subprocess.check_output('cd {} & git pull --recurse-submodules'.format(installDir), stderr=subprocess.STDOUT, shell=True))
+        print(Update.git('pull --recurse-submodules', installDir))
     
     @staticmethod 
     def extension(repo):
-        status = subprocess.check_output('cd {} & git status --untracked-files=no --porcelain'.format(repo), stderr=subprocess.STDOUT, shell=True)
+        status = Update.git('status --untracked-files=no --porcelain', repo)
         if status:
             print('Skipped update &mdash; repository not clean! :flushed_face:')
         else:
-            print(subprocess.check_output('cd {} & git pull'.format(repo), stderr=subprocess.STDOUT, shell=True))
+            print(Update.git('pull', repo))
     
     @staticmethod
     def extensions(extensionsDir):
