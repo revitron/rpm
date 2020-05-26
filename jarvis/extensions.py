@@ -1,0 +1,30 @@
+import jarvis
+import revitron
+import glob
+import os
+
+class ExtensionsManager:
+    
+    def __init__(self):
+        self.installed = self.getInstalled()
+    
+    def getInstalled(self):
+        
+        extensions = []
+        for item in glob.glob('{}\\*.*\\.git'.format(jarvis.JRVS_EXTENSIONS_DIR)):
+            
+            extPath = os.path.dirname(item)
+            ext = os.path.basename(extPath)
+            
+            if ext not in jarvis.JRVS_CORE_EXTENSIONS:
+                extensions.append(extPath)
+                
+        return extensions
+    
+    def removeAll(self):
+        for ext in self.installed:
+            os.system('rmdir /Q /S {}'.format(ext))
+    
+    def install(self, name, repo, extType):
+        cmd = '{} extend {} {} {} --dest="{}"'.format(jarvis.JRVS_PYREVIT_BIN, extType, name, repo, jarvis.JRVS_EXTENSIONS_DIR)
+        os.system(cmd)
