@@ -1,17 +1,17 @@
 body {
-	color: #c3c8cd;
-	background-color: #2c3e50;
+	color: #abb2bf;
+	background-color: #282c34;
 	font-family: Consolas;
-	font-size: 14px;
-	line-height: 20px;
+	font-size: 17px;
+	line-height: 22px;
 	margin: 0 0 15px 0;
 	padding: 25px;
-	scrollbar-arrow-color: #617181;
-	scrollbar-base-color: #2c3e50;
-	scrollbar-face-color: #485868;
-	scrollbar-highlight-color: #4a5a69;
-	scrollbar-shadow-color: #2c3e50;
-	scrollbar-track-color: #2c3e50;
+	scrollbar-arrow-color: #3c414b;
+	scrollbar-base-color: #282c34;
+	scrollbar-face-color: #3c414b;
+	scrollbar-highlight-color: #282c34;
+	scrollbar-shadow-color: #282c34;
+	scrollbar-track-color: #282c34;
 	background-image: url(https://git.herzogdemeuron.com/m.dahmen/jarvis/-/raw/master/svg/jarvis-dark.svg?inline=false);
 	background-repeat: no-repeat;
 	background-size: 120px 80px;
@@ -21,23 +21,21 @@ body {
 
 img[src*="jarvis-dark.svg"] {
 	display: block;
-	width: 450px;
+	width: 550px;
 	margin: 30px auto;
 	padding-bottom: 30px;
 }
 
 hr {
 	border: none;
-	border-top: 1px solid #3d5268;
+	border-top: 2px solid #3b404b;
 	margin: 40px 0; 
 }
 
 em {
-	color: #2c3e50;
-	font-weight: bold;
-	background-color: #c3c8cd;
-	border-radius: 3px;
-	padding: 3px 6px;
+	color: #61afef;
+	font-weight: normal;
+	font-style: normal;
 }
 
 table {
@@ -59,13 +57,9 @@ tr:nth-child(odd) {
 	background-color: #f2f2f2
 }
 
-/* tr:last-child {
-	background: #233749;
-} */
-
 .entry {
-	margin-bottom: 3px;
-	margin-top: 3px;
+	margin-bottom: 6px;
+	margin-top: 6px;
 	padding-left: 0;
 	padding-right: 0;
 	word-wrap: break-word;
@@ -73,22 +67,13 @@ tr:nth-child(odd) {
 
 .errorentry {
 	position: relative;
-	background: #bd6049;
-	border-radius: 5px;
-	border: 2px solid;
-	border-top-width: 26px;
-	color: #f7dbd4;
+	background: #2c313c;
+	border-left: 2px solid;
+	color: #e06c6c;
 	margin-top: 10px;
 	padding: 15px;
 }
 
-.errorentry:after {
-	content: 'Error';
-	position: absolute;
-	top: -23px;
-	left: 15px;
-	color: #bd6049;
-}
 
 .logdefault {
 	border-radius: 0;
@@ -99,28 +84,26 @@ tr:nth-child(odd) {
 .logsuccess, 
 .logerror,
 .logwarning,
-.logcritical {
+.logcritical,
+.logdeprecate {
 	margin: 10px 0;
-	padding: 6px 9px;
-	border-radius: 3px;
-	border-left: 4px solid;
+	padding: 10px 15px;
+	background: #2c313c;
+	border-left: 2px solid;
 }
 
 .logsuccess {
-	color: #088104;
-	background-color: #d1ebc5;
+	color: #98c379;
 }
 
 .logerror,
 .logcritical {
-	color: #b9311f;
-	background-color: #f0d3cc;
+	color: #e06c75;
 }
 
 .logwarning,
 .logdeprecate {
-	color: #bd710f;
-	background-color: #f7e0c7;
+	color: #e5c07b;
 }
 
 .coreupdatewarn {
@@ -133,8 +116,8 @@ tr:nth-child(odd) {
 
 .inlinewait {
 	border-radius: 0;
-	border: 1px solid #2c3e50;
-	color: #2c3e50;
+	border: 1px solid #282c34;
+	color: #282c34;
 	margin: 6px;
 	padding: 6px;
 	padding-bottom: 8px;
@@ -150,7 +133,7 @@ tr:nth-child(odd) {
 }
 
 .progressindicator {
-	background: #2c3e50;
+	background: #282c34;
 	border: 0;
 	top: 0;
 	font-size: 1pt;
@@ -168,8 +151,8 @@ tr:nth-child(odd) {
 }
 
 .elementlink {
-	background-color: #2c3e50;
-	/*border: 1px solid #2c3e50;*/
+	background-color: #282c34;
+	/*border: 1px solid #282c34;*/
 	border-radius: 0;
 	color: #ffffff;
 	display: inline-block;
