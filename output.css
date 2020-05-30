@@ -38,6 +38,10 @@ em {
 	font-style: normal;
 }
 
+em.path {
+	color: #c678dd;
+}
+
 table {
 	border-collapse: collapse;
 	width: 100%
