@@ -8,7 +8,7 @@ import jarvis
 class Update:
 
     def __init__(self):
-        Update.jarvis(jarvis.JRVS_DIR)
+        Update.pyrevit(jarvis.JRVS_PYREVIT_DIR)
         Update.extensions(jarvis.JRVS_EXTENSIONS_DIR)
         
     @staticmethod
@@ -16,10 +16,10 @@ class Update:
         return subprocess.check_output('git --git-dir={0}\\.git --work-tree={0} {1}'.format(repo, cmd), stderr=subprocess.STDOUT, shell=True)
         
     @staticmethod
-    def jarvis(installDir):
+    def pyrevit(installDir):
         out = script.get_output()
-        out.print_html('<em>Jarvis</em> &mdash; updating ...')
-        print(Update.git('pull --recurse-submodules', installDir))
+        out.print_html('<em>pyRevit</em> &mdash; updating ...')
+        print(Update.git('pull', installDir))
     
     @staticmethod 
     def extension(repo):
