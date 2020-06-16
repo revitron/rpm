@@ -1,3 +1,3 @@
 # Jarvis
 
-![](svg/jarvis-dark.svg)
+![](svg/jarvis.svg)
