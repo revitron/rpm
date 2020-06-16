@@ -1,5 +1,5 @@
 body {
-	color: #eeeeee;
+	color: #dddddd;
 	background-color: #222222;
 	font-family: Consolas;
 	font-size: 17px;
@@ -15,7 +15,7 @@ body {
 	background-image: url(https://raw.githubusercontent.com/revitron/jarvis/master/svg/jarvis.svg);
 	background-repeat: no-repeat;
 	background-size: 120px 80px;
-	background-position: right 0 bottom 15px;
+	background-position: right -10px bottom 15px;
 	background-attachment: fixed;
 }
 
@@ -28,22 +28,17 @@ img[src*="jarvis.svg"] {
 
 hr {
 	border: none;
-	border-top: 1px solid #333333;
+	border-top: 1px solid #444444;
 	margin: 40px 0; 
 }
 
 em {
-	color: #ffffff;
+	color: #eeeeee;
 	background-color: #343434;
 	padding: 3px 5px;
 	border-radius: 4px;
-	font-weight: bold;
-	font-style: normal;
-}
-
-em.path {
-	color: #777777;
 	font-weight: normal;
+	font-style: normal;
 }
 
 table {
