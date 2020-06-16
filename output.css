@@ -1,45 +1,49 @@
 body {
-	color: #abb2bf;
-	background-color: #282c34;
+	color: #eeeeee;
+	background-color: #222222;
 	font-family: Consolas;
 	font-size: 17px;
 	line-height: 22px;
 	margin: 0 0 15px 0;
 	padding: 25px;
-	scrollbar-arrow-color: #3c414b;
-	scrollbar-base-color: #282c34;
-	scrollbar-face-color: #3c414b;
-	scrollbar-highlight-color: #282c34;
-	scrollbar-shadow-color: #282c34;
-	scrollbar-track-color: #282c34;
-	background-image: url(https://git.herzogdemeuron.com/m.dahmen/jarvis/-/raw/master/svg/jarvis-dark.svg?inline=false);
+	scrollbar-arrow-color: #333333;
+	scrollbar-base-color: #222222;
+	scrollbar-face-color: #333333;
+	scrollbar-highlight-color: #222222;
+	scrollbar-shadow-color: #222222;
+	scrollbar-track-color: #222222;
+	background-image: url(https://raw.githubusercontent.com/revitron/jarvis/master/svg/jarvis.svg);
 	background-repeat: no-repeat;
 	background-size: 120px 80px;
 	background-position: right 0 bottom 15px;
 	background-attachment: fixed;
 }
 
-img[src*="jarvis-dark.svg"] {
+img[src*="jarvis.svg"] {
 	display: block;
-	width: 550px;
+	width: 650px;
 	margin: 30px auto;
 	padding-bottom: 30px;
 }
 
 hr {
 	border: none;
-	border-top: 2px solid #3b404b;
+	border-top: 1px solid #333333;
 	margin: 40px 0; 
 }
 
 em {
-	color: #61afef;
-	font-weight: normal;
+	color: #ffffff;
+	background-color: #343434;
+	padding: 3px 5px;
+	border-radius: 4px;
+	font-weight: bold;
 	font-style: normal;
 }
 
 em.path {
-	color: #c678dd;
+	color: #777777;
+	font-weight: normal;
 }
 
 table {
@@ -71,7 +75,7 @@ tr:nth-child(odd) {
 
 .errorentry {
 	position: relative;
-	background: #2c313c;
+	background: #343434;
 	border-left: 2px solid;
 	color: #e06c6c;
 	margin-top: 10px;
@@ -92,7 +96,7 @@ tr:nth-child(odd) {
 .logdeprecate {
 	margin: 10px 0;
 	padding: 10px 15px;
-	background: #2c313c;
+	background: #343434;
 	border-left: 2px solid;
 }
 
@@ -120,8 +124,8 @@ tr:nth-child(odd) {
 
 .inlinewait {
 	border-radius: 0;
-	border: 1px solid #282c34;
-	color: #282c34;
+	border: 1px solid #222222;
+	color: #222222;
 	margin: 6px;
 	padding: 6px;
 	padding-bottom: 8px;
@@ -137,7 +141,7 @@ tr:nth-child(odd) {
 }
 
 .progressindicator {
-	background: #282c34;
+	background: #222222;
 	border: 0;
 	top: 0;
 	font-size: 1pt;
@@ -155,8 +159,8 @@ tr:nth-child(odd) {
 }
 
 .elementlink {
-	background-color: #282c34;
-	/*border: 1px solid #282c34;*/
+	background-color: #343434;
+	/*border: 1px solid #222222;*/
 	border-radius: 0;
 	color: #ffffff;
 	display: inline-block;
