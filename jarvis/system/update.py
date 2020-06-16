@@ -19,7 +19,7 @@ class Update:
     def pyrevit(installDir):
         out = script.get_output()
         out.print_html('<em>pyRevit</em> &mdash; updating ...')
-        out.print_html('<em class="path">{}</em>'.format(installDir))
+        out.print_html('Installed in "{}"'.format(installDir))
         print(Update.git('pull', installDir))
     
     @staticmethod 
@@ -37,6 +37,5 @@ class Update:
             out.print_html('<br>')
             repo = os.path.dirname(git)
             out.print_html('<em>{}</em> &mdash; updating ...'.format(os.path.basename(repo)))
-            out.print_html('<em class="path">{}</em>'.format(repo))
             Update.extension(repo)
         
