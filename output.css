@@ -19,6 +19,14 @@ body {
 	background-attachment: fixed;
 }
 
+a {
+	color: #c0c0c0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 img[src*="jarvis.svg"] {
 	display: block;
 	width: 650px;
@@ -70,7 +78,7 @@ tr:nth-child(odd) {
 
 .errorentry {
 	position: relative;
-	background: #343434;
+	background: #303030;
 	border-left: 2px solid;
 	color: #e06c6c;
 	margin-top: 10px;
