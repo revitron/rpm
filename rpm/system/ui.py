@@ -9,7 +9,7 @@ class UI:
     @staticmethod 
     def printLogo():
         out = script.get_output()
-        out.print_image(config.RPM_CORE_DIR + '/svg/jarvis.svg')
+        out.print_image(config.RPM_CORE_DIR + '/svg/rpm.svg')
         
     @staticmethod  
     def setStyle():
