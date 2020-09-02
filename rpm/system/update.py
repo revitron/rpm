@@ -2,14 +2,14 @@ import subprocess
 import os
 import glob
 from pyrevit import script
-import jarvis
+from rpm import config
 
 
 class Update:
 
     def __init__(self):
-        Update.pyrevit(jarvis.JRVS_PYREVIT_DIR)
-        Update.extensions(jarvis.JRVS_EXTENSIONS_DIR)
+        Update.pyrevit(config.RPM_PYREVIT_DIR)
+        Update.extensions(config.RPM_EXTENSIONS_DIR)
         
     @staticmethod
     def git(cmd, repo):
