@@ -6,7 +6,7 @@ Revitron Package Manager for pyRevit.
 ![GitHub top language](https://img.shields.io/github/languages/top/revitron/rpm?color=222222)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/revitron/rpm?color=222222)
 
-![](https://raw.githubusercontent.com/revitron/revitron/master/svg/revitron-readme.svg)
+![](https://raw.githubusercontent.com/revitron/rpm/master/svg/rpm-readme.svg)
 
 ## Install
 
