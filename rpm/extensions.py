@@ -1,5 +1,4 @@
 from rpm import config
-import revitron
 import glob
 import os
 
