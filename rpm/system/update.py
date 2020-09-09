@@ -31,7 +31,9 @@ class Update:
             print(Update.git('pull', repo))
     
     @staticmethod
-    def extensions(extensionsDir):
+    def extensions(extensionsDir=False):
+        if not extensionsDir:
+            extensionsDir = config.RPM_EXTENSIONS_DIR
         out = script.get_output()
         for git in glob.glob('{}\\*\\.git'.format(extensionsDir)):
             out.print_html('<br>')
