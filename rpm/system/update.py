@@ -13,7 +13,7 @@ class Update:
         
     @staticmethod
     def git(cmd, repo):
-        return subprocess.check_output('git --git-dir={0}\\.git --work-tree={0} {1}'.format(repo, cmd), stderr=subprocess.STDOUT, shell=True)
+        return subprocess.check_output('git --git-dir={0}\\.git --work-tree={0} {1}'.format(repo, cmd), stderr=subprocess.STDOUT, shell=True, cwd='C:\\')
         
     @staticmethod
     def pyrevit(installDir):
