@@ -10,11 +10,10 @@ Revitron Package Manager &mdash; a package manager for [pyRevit](https://github.
 
 ## Installation
 
-Note that RPM requires [Git](https://git-scm.com/) for managing extension repositories. 
+Note that RPM requires [Revitron](https://revitron.readthedocs.io/) and [Git](https://git-scm.com/) for managing extension repositories. 
 
     pyrevit extend lib revitron https://github.com/revitron/revitron.git --dest=extensions
-    pyrevit extend lib rpm https://github.com/revitron/rpm.git --dest=extensions
-    pyrevit extend ui rpm-ui https://github.com/revitron/rpm-ui.git --dest=extensions
+    pyrevit extend ui rpm https://github.com/revitron/rpm.git --dest=extensions
 
 ## Usage
 
