@@ -12,11 +12,10 @@ class Update:
 		try:
 			if not os.path.isdir(repo + '\\.git'):
 				return False
-			Update.git('fetch origin', repo)
-			status = Update.git('status --untracked-files=no --porcelain', repo)
+			status = Update.git('fetch origin --dry-run', repo)
 			if status:
 				out = script.get_output()
-				out.print_html('<b>{}</b>'.format(os.path.basename(repo)))
+				out.print_html('<b>{}</b> &mdash; updates available'.format(os.path.basename(repo)))
 				print(status)
 				out.print_html('<br>')
 				return True
