@@ -18,7 +18,7 @@ class UI:
 		out = script.get_output()
   
 		if Update.checkPyRevit():
-			cmdPyRevit= [CommandLink('Install pyRevit update now', return_value = True), 
+			cmdPyRevit= [CommandLink('Close all running Revit instances and install pyRevit update now', return_value = True), 
 						CommandLink('Skip update', return_value = False)]
 			dlgPyRevit = TaskDialog('There is a pyRevit update ready to be installed',
 									title = 'pyRevit Update',
