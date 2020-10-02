@@ -11,7 +11,9 @@ class UI:
 	@staticmethod 
 	def checkUpdates(close = True):
 	 
+		UI.addStyle()
 		UI.printLogo()
+		UI.printTitle()
 		updated = False	
 		out = script.get_output()
   
@@ -42,7 +44,7 @@ class UI:
 				updated = True
 		else:
 			out.print_html('<b>Extensions</b> are up to date')
-    
+	
 		if updated:
 			Session.reload()
 		else:
@@ -53,4 +55,14 @@ class UI:
 	def printLogo():
 		out = script.get_output()
 		out.print_image(config.RPM_DIR + '/svg/rpm-readme.svg')
+  
+	@staticmethod 
+	def printTitle():
+		out = script.get_output()
+		out.print_html('<h2>Revitron Package Manager</h2>')
+  
+	@staticmethod
+	def addStyle():
+		style = 'body {padding: 30px; color: #121212;} img {max-width: 500px;} span {display: block; text-align: center;}'
+		output.get_output().add_style(style)
 		
