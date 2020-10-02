@@ -1,12 +1,8 @@
 import revitron
 import os
 import sys 
-
 parent = os.path.dirname
 sys.path.append(parent(parent(parent(parent(parent(__file__))))))
-import rpm
+from rpm.system.ui import UI 
 
-if not revitron.Document().isFamily():
-	
-	rpm.Update.extensions()
-	rpm.system.Session.reload()
+UI.checkUpdates()
