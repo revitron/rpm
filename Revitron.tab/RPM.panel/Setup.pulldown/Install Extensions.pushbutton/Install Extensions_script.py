@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 import revitron
 import os
-import sys
 from revitron import _
-
-parent = os.path.dirname
-sys.path.append(parent(parent(parent(parent(parent(__file__))))))
 import rpm
 
 if not revitron.Document().isFamily():
