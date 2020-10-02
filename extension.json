@@ -10,5 +10,5 @@
     "url": "https://github.com/revitron/rpm.git",
     "website": "https://github.com/revitron/rpm",
     "image": "",
-    "dependencies": []
+    "dependencies": ["Revitron"]
 }
