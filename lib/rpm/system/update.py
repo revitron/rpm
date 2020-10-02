@@ -46,10 +46,7 @@ class Update:
 				
 	@staticmethod
 	def pyRevit():
-		out = script.get_output()
-		out.print_html('<b>pyRevit</b> &mdash; updating ...')
-		out.print_html('Installed in "{}"'.format(config.RPM_PYREVIT_DIR))
-		print(Update.git('pull', config.RPM_PYREVIT_DIR))
+		os.system('{}\\updatePyRevit.bat {}'.format(os.path.dirname(__file__), config.RPM_PYREVIT_DIR))
 	
 	@staticmethod 
 	def extension(repo):
