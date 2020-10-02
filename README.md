@@ -1,12 +1,12 @@
-![](https://raw.githubusercontent.com/revitron/rpm/master/svg/rpm-readme.svg)
+![](svg/rpm-readme.svg)
 
 # RPM
 
 Revitron Package Manager &mdash; a package manager for [pyRevit](https://github.com/eirannejad/pyRevit) that lets you define a list of extensions as dependencies for your Revit projects.
 
-![GitHub](https://img.shields.io/github/license/revitron/rpm-ui?color=222222)
-![GitHub top language](https://img.shields.io/github/languages/top/revitron/rpm-ui?color=222222)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/revitron/rpm-ui?color=222222)
+![GitHub](https://img.shields.io/github/license/revitron/rpm?color=222222)
+![GitHub top language](https://img.shields.io/github/languages/top/revitron/rpm?color=222222)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/revitron/rpm?color=222222)
 
 ## Installation
 
