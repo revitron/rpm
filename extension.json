@@ -1,0 +1,14 @@
+{
+    "builtin": "False",
+    "default_enabled": "True",
+    "type": "extension",
+    "rocket_mode_compatible": "True",
+    "name": "RPM",
+    "description": "The Revitron Package Manager",
+    "author": "Marc Anton Dahmen",
+    "author_profile": "https://github.com/revitron",
+    "url": "https://github.com/revitron/rpm.git",
+    "website": "https://github.com/revitron/rpm",
+    "image": "",
+    "dependencies": []
+}
