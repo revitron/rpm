@@ -25,5 +25,6 @@ class ExtensionsManager:
             os.system('rmdir /Q /S {}'.format(ext))
     
     def install(self, name, repo, extType):
+        repo = repo.replace('.git', '') + '.git'
         cmd = '{} extend {} {} {} --dest="{}"'.format(config.RPM_PYREVIT_BIN, extType, name, repo, config.RPM_EXTENSIONS_DIR)
         os.system(cmd)
