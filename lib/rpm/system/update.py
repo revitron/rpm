@@ -27,10 +27,11 @@ class Update:
 		
 	@staticmethod
 	def checkExtensions():
+		status = False
 		for repo in Update.getExtensionRepos():
 			if Update.check(repo):
-				return True
-		return False
+				status = True
+		return status
 				
 	@staticmethod
 	def checkPyRevit():
