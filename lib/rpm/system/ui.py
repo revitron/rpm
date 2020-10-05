@@ -46,6 +46,7 @@ class UI:
 			out.print_html('<b>Extensions</b> are up to date')
 	
 		if updated:
+			out.print_html('<br><hr><br>')
 			Session.reload()
 		else:
 			if close:
