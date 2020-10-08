@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+Install all extensions defined for this project. You can define extensions for this project in the "Project Setup". 
+"""
 import revitron
 import os
 import rpm

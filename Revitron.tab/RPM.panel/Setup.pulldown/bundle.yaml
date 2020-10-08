@@ -1,5 +1,7 @@
 layout:
-  - Project Setup
+  - ProjectSetup[title:Project Setup]
   - -----
-  - Install Extensions
-  - Check for Updates
+  - InstallExtensions[title:Install Extensions]
+  - CheckForUpdates[title:Check for Updates]
+
+title: Setup

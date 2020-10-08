@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+Define extensions to be used with this Revit model. Defined extensions can be installed by using the "Install Extensions" button. 
+"""
 import revitron
 import System.Windows
 from rpw.ui.forms import FlexForm, TextBox, Button, Label
