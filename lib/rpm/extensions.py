@@ -5,6 +5,7 @@ import os
 import json
 import subprocess
 
+
 mlogger = logger.get_logger(__name__)
 
 class ExtensionsManager:
