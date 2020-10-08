@@ -2,22 +2,26 @@ import subprocess
 import os
 import glob
 from pyrevit import script
+from pyrevit.coreutils import logger
 from rpm import config
 
+
+mlogger = logger.get_logger(__name__)
 
 class Update:
 		
 	@staticmethod
 	def check(repo):  
-		out = script.get_output()
+		mlogger.info('Checking updates for {}'.format(repo))
 		try:
 			if not os.path.isdir(repo + '\\.git'):
 				return False
 			if not Update.remoteExists(repo):
-				out.print_html('Error: Remote of repository "{}" not found!'.format(os.path.basename(repo)))
+				mlogger.error('Remote of repository "{}" not found!'.format(os.path.basename(repo)))
 				return False
 			status = Update.git('fetch origin --dry-run', repo)
 			if status:
+				mlogger.info(status)
 				return True
 		except:
 			pass	
@@ -65,11 +69,11 @@ class Update:
 	@staticmethod 
 	def extension(repo):
 		if not Update.remoteExists(repo):
-			print('Error: Remote of repository "{}" not found!'.format(os.path.basename(repo)))
+			mlogger.error('Remote of repository "{}" not found!'.format(os.path.basename(repo)))
 			return False
 		status = Update.git('status --untracked-files=no --porcelain', repo)
 		if status:
-			print('Skipped update &mdash; repository not clean!')
+			mlogger.warning('Skipped update, repository not clean!')
 		else:
 			print(Update.git('pull', repo))
 	
