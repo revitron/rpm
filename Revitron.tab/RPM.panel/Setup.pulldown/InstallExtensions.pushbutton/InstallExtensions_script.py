@@ -5,6 +5,10 @@ Install all extensions defined for this project. You can define extensions for t
 import revitron
 import os
 import rpm
+from pyrevit.coreutils import logger
+
+
+mlogger = logger.get_logger(__name__)
 
 if not revitron.Document().isFamily():
 
@@ -21,9 +25,8 @@ if not revitron.Document().isFamily():
 			extType = items[0].strip()
 			extRepo = items[1].strip()
 			extName = os.path.basename(extRepo).replace('.git', '')
-			print('Installing {}'.format(extName))
 			extManager.install(extName, extRepo, extType)
 		except:
-			pass
+			mlogger.error('Installing {} failed'.format(extName))
 		
 	rpm.system.Session.reload()
