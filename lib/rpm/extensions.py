@@ -1,6 +1,7 @@
 from rpm import config
 from pyrevit import script
 from pyrevit.coreutils import logger
+from datetime import datetime
 import os
 import json
 import subprocess
@@ -52,5 +53,11 @@ class ExtensionsManager:
   
 	def register(self, name, repo, extType, path):
 		data = {'installed': self.getInstalled()}
-		data['installed'][os.path.basename(path)] = {'name': name, 'type': extType, 'repo': repo, 'path': path}
+		data['installed'][os.path.basename(path)] = {
+			'name': name, 
+   			'type': extType, 
+      		'repo': repo, 
+        	'path': path, 
+         	'date': str(datetime.now())
+        }
 		script.dump_json(data, self.json)
