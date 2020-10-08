@@ -53,7 +53,16 @@ class Update:
 				
 	@staticmethod
 	def pyRevit():
-		os.system('{}\\updatePyRevit.bat {}'.format(os.path.dirname(__file__), config.RPM_PYREVIT_DIR))
+		revit = ''
+		process = subprocess.Popen(['powershell', 'Get-Process Revit | Select-Object Path'], stdout=subprocess.PIPE)
+		while True:
+			line = process.stdout.readline()
+			if 'Revit' in line:
+				revit = line
+				break
+			if not line:
+				break
+		os.system('{}\\updatePyRevit.bat "{}" "{}"'.format(os.path.dirname(__file__), config.RPM_PYREVIT_DIR, revit))
 	
 	@staticmethod 
 	def extension(repo):

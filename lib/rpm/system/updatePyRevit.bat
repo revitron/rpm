@@ -1,6 +1,7 @@
 @echo off
 
 echo %1
+echo %2
 cd %1
 
 :stillRunning
@@ -11,4 +12,4 @@ cd %1
 
 git pull origin
 
-pause
+START "" %2
