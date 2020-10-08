@@ -1,7 +1,6 @@
 from rpm import config
 from pyrevit import script
 from pyrevit.coreutils import logger
-import glob
 import os
 import json
 import subprocess
