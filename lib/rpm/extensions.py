@@ -1,30 +1,56 @@
 from rpm import config
+from pyrevit import script
+from pyrevit.coreutils import logger
 import glob
 import os
+import json
+import subprocess
+
+mlogger = logger.get_logger(__name__)
 
 class ExtensionsManager:
-    
-    def __init__(self):
-        self.installed = self.getInstalled()
-    
-    def getInstalled(self):
-        
-        extensions = []
-        for item in glob.glob('{}\\*.*\\.git'.format(config.RPM_EXTENSIONS_DIR)):
-            
-            extPath = os.path.dirname(item)
-            ext = os.path.basename(extPath)
-            
-            if ext not in config.RPM_CORE_EXTENSIONS:
-                extensions.append(extPath)
-                
-        return extensions
-    
-    def removeAll(self):
-        for ext in self.installed:
-            os.system('rmdir /Q /S {}'.format(ext))
-    
-    def install(self, name, repo, extType):
-        repo = repo.replace('.git', '') + '.git'
-        cmd = '{} extend {} {} {} --dest="{}"'.format(config.RPM_PYREVIT_BIN, extType, name, repo, config.RPM_EXTENSIONS_DIR)
-        os.system(cmd)
+	
+	def __init__(self):
+		self.json = config.RPM_EXTENSIONS_DIR + '\\rpm.json'
+		
+	def getInstalled(self):
+		try:
+			with open(self.json) as jsonFile:
+				data = json.load(jsonFile)
+		except:
+			data = {'installed': dict()}
+		return data['installed']
+
+	def removeAll(self):
+		for key, ext in self.getInstalled().iteritems():
+			try:
+				subprocess.check_output('rmdir /Q /S {}'.format(ext['path']), 
+                            			stderr=subprocess.STDOUT, 
+                                    	shell=True, 
+                                    	cwd='C:\\')
+				mlogger.info('Removed extension {}'.format(key))
+			except:
+				mlogger.error('Error removing extension {}'.format(key))
+	
+	def install(self, name, repo, extType):
+		repo = repo.replace('.git', '') + '.git'
+		cmd = '{} extend {} {} {} --dest="{}"'.format(config.RPM_PYREVIT_BIN, extType, name, repo, config.RPM_EXTENSIONS_DIR)
+		types = {'ui': 'extension', 'lib': 'lib'}
+		path = config.RPM_EXTENSIONS_DIR + '\\' + name + '.' + types.get(extType, 'extension')
+		try:	
+			if not os.path.isdir(path):
+				subprocess.check_output(cmd, 
+                            			stderr=subprocess.STDOUT, 
+                                    	shell=True, 
+                                    	cwd='C:\\')
+				mlogger.info('Installed extension {}'.format(name))
+			else:
+				mlogger.error('{} is not empty!'.format(path))
+			self.register(name, repo, extType, path)
+		except:
+			mlogger.error('Installing {} has failed!'.format(name))
+  
+	def register(self, name, repo, extType, path):
+		data = {'installed': self.getInstalled()}
+		data['installed'][os.path.basename(path)] = {'name': name, 'type': extType, 'repo': repo, 'path': path}
+		script.dump_json(data, self.json)
