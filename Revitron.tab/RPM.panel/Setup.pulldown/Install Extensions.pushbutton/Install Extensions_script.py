@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import revitron
 import os
-from revitron import _
 import rpm
 
 if not revitron.Document().isFamily():
