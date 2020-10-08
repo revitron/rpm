@@ -47,6 +47,7 @@ class UI:
 					UI.printLogo()
 					UI.printTitle()
 					Update.extensions()
+					out.print_html('<br><br>')
 					Session.reload() 
 		
 	@staticmethod 
