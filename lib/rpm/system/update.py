@@ -14,12 +14,10 @@ class Update:
 			if not os.path.isdir(repo + '\\.git'):
 				return False
 			if not Update.remoteExists(repo):
-				out.print_html('<br>Error: Remote of repository "{}" not found!'.format(os.path.basename(repo)))
+				out.print_html('Error: Remote of repository "{}" not found!'.format(os.path.basename(repo)))
 				return False
 			status = Update.git('fetch origin --dry-run', repo)
 			if status:
-				out.print_html('<br><b>{}</b> &mdash; updates available'.format(os.path.basename(repo)))			
-				print(status)
 				return True
 		except:
 			pass	
