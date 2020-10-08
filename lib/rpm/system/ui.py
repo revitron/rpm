@@ -17,7 +17,7 @@ class UI:
 		pyRevit = Update.checkPyRevit()
 		extensions = Update.checkExtensions()
   
-		if not pyRevit and not extensions:
+		if not pyRevit and not extensions and not notifyOnly:
 			forms.alert('Everything is up to date!',
 						title = 'pyRevit Extensions Updates')
   
