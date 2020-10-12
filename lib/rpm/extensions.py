@@ -32,6 +32,8 @@ class ExtensionsManager:
 				mlogger.info('Removed extension {}'.format(key))
 			except:
 				mlogger.error('Error removing extension {}'.format(key))
+		data = {'installed': dict()}
+		script.dump_json(data, self.json)
 	
 	def install(self, name, repo, extType):
 		repo = repo.replace('.git', '') + '.git'
