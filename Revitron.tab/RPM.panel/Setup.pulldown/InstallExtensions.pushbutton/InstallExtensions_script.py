@@ -27,6 +27,9 @@ if not revitron.Document().isFamily():
 			extName = os.path.basename(extRepo).replace('.git', '')
 			extManager.install(extName, extRepo, extType)
 		except:
-			mlogger.error('Installing {} failed'.format(extName))
+			try:
+				mlogger.error('Installing {} failed'.format(extName))
+			except:
+				pass
 		
 	rpm.system.Session.reload()
