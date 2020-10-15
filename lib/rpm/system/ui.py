@@ -49,6 +49,7 @@ class UI:
 					Update.extensions()
 					out.print_html('<br><br>')
 					Session.reload() 
+					out.print_html('<br>Update finished!')
 		
 	@staticmethod 
 	def printLogo():
