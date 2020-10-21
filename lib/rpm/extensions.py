@@ -26,9 +26,9 @@ class ExtensionsManager:
 		for key, ext in self.getInstalled().iteritems():
 			try:
 				subprocess.check_output('rmdir /Q /S {}'.format(ext['path']), 
-                            			stderr=subprocess.STDOUT, 
-                                    	shell=True, 
-                                    	cwd='C:\\')
+										stderr=subprocess.STDOUT, 
+										shell=True, 
+										cwd='C:\\')
 				mlogger.info('Removed extension {}'.format(key))
 			except:
 				mlogger.error('Error removing extension {}'.format(key))
@@ -43,23 +43,23 @@ class ExtensionsManager:
 		try:	
 			if not os.path.isdir(path):
 				subprocess.check_output(cmd, 
-                            			stderr=subprocess.STDOUT, 
-                                    	shell=True, 
-                                    	cwd='C:\\')
+										stderr=subprocess.STDOUT, 
+										shell=True, 
+										cwd='C:\\')
 				mlogger.info('Installed extension {}'.format(name))
 			else:
 				mlogger.error('{} is not empty!'.format(path))
 			self.register(name, repo, extType, path)
 		except:
 			mlogger.error('Installing {} has failed!'.format(name))
-  
+	
 	def register(self, name, repo, extType, path):
 		data = {'installed': self.getInstalled()}
 		data['installed'][os.path.basename(path)] = {
 			'name': name, 
-   			'type': extType, 
-      		'repo': repo, 
-        	'path': path, 
-         	'date': str(datetime.now())
-        }
+			'type': extType, 
+			'repo': repo, 
+			'path': path, 
+			'date': str(datetime.now())
+		}
 		script.dump_json(data, self.json)
