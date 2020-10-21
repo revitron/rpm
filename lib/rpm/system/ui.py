@@ -9,18 +9,13 @@ from rpm.system.session import Session
 class UI:
 	
 	@staticmethod 
-	def checkUpdates(notifyOnly = False):
-	 
-		updated = False	
+	def checkUpdates(force = False):
+	
+		hasUpdates = False
 		out = script.get_output()
-
 		pyRevit = Update.checkPyRevit()
 		extensions = Update.checkExtensions()
-  
-		if not pyRevit and not extensions and not notifyOnly:
-			forms.alert('Everything is up to date!',
-						title = 'pyRevit Extensions Updates')
-  
+
 		if pyRevit:
 			install = 'Close open Revit sessions and install pyRevit core update now'
 			skip = 'Skip update and keep Revit sessions open'
@@ -30,38 +25,35 @@ class UI:
 						 	  options = [install, skip])
 			if res == install:
 				Update.pyRevit()
+			else:
+				hasUpdates = True
 		
 		if extensions:
-			if notifyOnly:
-				forms.alert('There are pyRevit extensions updates available and ready to be installed.',
-							sub_msg = 'Please use the "Revitron > RPM > Setup > Check for Updates" button to run the updater.',
-							title = 'pyRevit Extensions Updates')
-			else:
-				install = 'Install extension updates now'
-				skip = 'Skip updates'
+			install = 'Install extension updates now'
+			skip = 'Skip updates'
+			if force:
+				res = install
+			else: 
 				res = forms.alert('There are pyRevit extension updates ready to be installed.',
 								  title = 'pyRevit Extensions Updates',
-						 	  	  options = [install, skip])
-				if res == install:
-					UI.addStyle()
-					UI.printLogo()
-					UI.printTitle()
-					Update.extensions()
-					out.print_html('<br><br>Update finished!<br><br>')
-					Session.reload() 
+								  options = [install, skip])
+			if res == install:
+				UI.printLogo()
+				UI.printTitle()
+				Update.extensions()
+				out.print_html('<br><br>Update has finished. Reloading ...<br><br>')
+				Session.reload() 
+			else:
+				hasUpdates = True
+			
+		return hasUpdates
 		
 	@staticmethod 
 	def printLogo():
 		out = script.get_output()
-		out.print_image(config.RPM_DIR + '/svg/rpm-readme.svg')
+		out.print_html('<div style="text-align:center; margin: 30px 0"><img src="{}" style="max-width:500px;"></div>'.format(config.RPM_DIR + '/svg/rpm-ui.svg'))
   
 	@staticmethod 
 	def printTitle():
 		out = script.get_output()
 		out.print_html('<h2>Revitron Package Manager</h2>')
-  
-	@staticmethod
-	def addStyle():
-		style = 'body {padding: 30px; color: #121212;} img {max-width: 500px;} span {display: block; text-align: center;}'
-		output.get_output().add_style(style)
-		

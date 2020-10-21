@@ -73,6 +73,7 @@ class Update:
 			return False
 		status = Update.git('status --untracked-files=no --porcelain', repo)
 		if status:
+			print(status)
 			mlogger.warning('Skipped update, repository not clean!')
 		else:
 			print(Update.git('pull', repo))
